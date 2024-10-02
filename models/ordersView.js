@@ -1,5 +1,5 @@
 async function getOrders() {
-  const url = "http://localhost:8000/data/orders.php";
+  const url = "/data/orders.php";
 
   try {
     const response = await fetch(url);

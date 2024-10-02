@@ -39,7 +39,7 @@ cotizar.addEventListener("click", async (e) => {
   );
 
   const rawResponse = await fetch(
-    "http://localhost:8000/data/createOrder.php",
+    "/data/createOrder.php",
     {
       method: "POST",
       headers: {

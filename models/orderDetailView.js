@@ -5,7 +5,7 @@ async function getOrder() {
 
   try {
     const rawResponse = await fetch(
-      `http://localhost:8000/data/readOrder.php?orderNumber=${orderNumber}`
+      `/data/readOrder.php?orderNumber=${orderNumber}`
     );
     if (!rawResponse.ok) {
       throw new Error(`Response status: ${response.status}`);
