@@ -1,0 +1,73 @@
+const inputName = document.getElementById("inputName");
+const inputRut = document.getElementById("inputRut");
+const inputAdress = document.getElementById("inputAdress");
+const inputPhoneNumber = document.getElementById("inputPhoneNumber");
+const inpProductName = document.getElementById("inputProductName");
+const inputValue = document.getElementById("inputValue");
+const inputProductDescription = document.getElementById(
+  "inputProductDescription"
+);
+
+const llenarFormulario = document.getElementById("llenarFormulario");
+llenarFormulario.addEventListener("click", (e) => {
+  inputName.value = "derp";
+  inputRut.value = "12.234.567-k";
+  inputAdress.value = "derp street";
+  inputPhoneNumber.value = "1235679869";
+  inpProductName.value = "derpins";
+  inputValue.value = "9898989";
+  inputProductDescription.value = "derp";
+});
+
+const cotizar = document.getElementById("btnCotizar");
+
+cotizar.addEventListener("click", async (e) => {
+  const form = document.getElementById("miForm");
+  if (miForm.checkValidity() !== true) {
+    return;
+  }
+  e.preventDefault();
+
+  const inputName = document.getElementById("inputName");
+  const inputRut = document.getElementById("inputRut");
+  const inputAdress = document.getElementById("inputAdress");
+  const inputPhoneNumber = document.getElementById("inputPhoneNumber");
+  const inputProductName = document.getElementById("inputProductName");
+  const inputValue = document.getElementById("inputValue");
+  const inputProductDescription = document.getElementById(
+    "inputProductDescription"
+  );
+
+  const rawResponse = await fetch(
+    "http://localhost:8000/data/createOrder.php",
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: inputName.value,
+        rut: inputRut.value,
+        adress: inputAdress.value,
+        phone_number: inputPhoneNumber.value,
+        product_name: inputProductName.value,
+        price: inputValue.value,
+        product_description: inputProductDescription.value,
+      }),
+    }
+  );
+
+  //redirect
+
+  if (!rawResponse.ok) {
+    throw new Error(`Response status: ${response.status}`);
+  }
+
+  const json = await rawResponse.json();
+
+  console.log(json);
+  const orderDetailViewURL = `/view/orderDetailView.html?orderNumber=${json.id}`;
+
+  window.location.replace(orderDetailViewURL);
+});
