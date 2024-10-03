@@ -61,3 +61,19 @@ If your using xampp
 + On your Xampp control panel, stop and start apache and MySQL
 
 if you're not using xampp just do the same as before but in the php directory on your computer.
+
+If you experience problems with mysql authorization 
+
+That could be a mismatched between mysql existing users or lack of users and our configuration in `connection.php`
+
+If you don't have the "Admin" user, you can create it using the following:
+
+```sql
+CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
+```
+And then giving privileges to the database:
+_(no password for educational/development purposes)_
+
+```sql
+GRANT ALL PRIVILEGES ON carritos_fast_food.* TO 'admin'@'localhost';
+```
