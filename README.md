@@ -54,7 +54,7 @@ CREATE TABLE orders (
 #### Troubleshooting
 If you have problems with mysqli:
 
-If your using xampp
+##### If your using xampp
 + Go to the Xapp folder open php.ini file inside the PHP folder i.e xampp\php\php.ini (with a text editor).
 + Search for extension=mysqli (Ctrl+F), if there are two, look for the one that has been uncommented (without ";" behind)
 + Change the mysqli with the correct path address i.e extension=C:\xampp\php\ext\php_mysqli.dll.
@@ -62,17 +62,16 @@ If your using xampp
 
 if you're not using xampp just do the same as before but in the php directory on your computer.
 
-If you experience problems with mysql authorization 
+##### If you experience problems with mysql authorization 
 
 That could be a mismatched between mysql existing users or lack of users and our configuration in `connection.php`
 
-If you don't have the "Admin" user, you can create it using the following:
+If you don't have the "Admin" user, you can create it using the following: _(no password for educational/development purposes)_
 
 ```sql
 CREATE USER 'admin'@'localhost' IDENTIFIED BY '';
 ```
 And then giving privileges to the database:
-_(no password for educational/development purposes)_
 
 ```sql
 GRANT ALL PRIVILEGES ON carritos_fast_food.* TO 'admin'@'localhost';
