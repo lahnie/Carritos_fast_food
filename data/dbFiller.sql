@@ -55,5 +55,21 @@ VALUES
         current_timestamp(),
         current_timestamp()
     );
-    
-    ALTER TABLE orders ADD status VARCHAR(60);
+
+ALTER TABLE orders ADD status VARCHAR(60);
+
+CREATE TABLE
+    orders (
+        id int NOT NULL AUTO_INCREMENT,
+        client_name varchar(255),
+        rut varchar(255),
+        address varchar(255),
+        phone_number VARCHAR(50),
+        product_name VARCHAR(255),
+        price INT,
+        product_description VARCHAR(255),
+        created_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_date DATETIME ON UPDATE CURRENT_TIMESTAMP,
+        status VARCHAR(50),
+        CONSTRAINT PK_id PRIMARY KEY (id)
+    );

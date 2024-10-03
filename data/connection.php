@@ -1,7 +1,7 @@
 <?php
 
 $host="localhost";
-$usuario="password";
+$usuario="admin";
 $db="carritos_fast_food";
 
 

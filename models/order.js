@@ -1,24 +1,3 @@
-const inputName = document.getElementById("inputName");
-const inputRut = document.getElementById("inputRut");
-const inputAdress = document.getElementById("inputAdress");
-const inputPhoneNumber = document.getElementById("inputPhoneNumber");
-const inpProductName = document.getElementById("inputProductName");
-const inputValue = document.getElementById("inputValue");
-const inputProductDescription = document.getElementById(
-  "inputProductDescription"
-);
-
-const llenarFormulario = document.getElementById("llenarFormulario");
-llenarFormulario.addEventListener("click", (e) => {
-  inputName.value = "derp";
-  inputRut.value = "12.234.567-k";
-  inputAdress.value = "derp street";
-  inputPhoneNumber.value = "1235679869";
-  inpProductName.value = "derpins";
-  inputValue.value = "9898989";
-  inputProductDescription.value = "derp";
-});
-
 const cotizar = document.getElementById("btnCotizar");
 
 cotizar.addEventListener("click", async (e) => {
