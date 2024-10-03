@@ -9,7 +9,7 @@ cotizar.addEventListener("click", async (e) => {
 
   const inputName = document.getElementById("inputName");
   const inputRut = document.getElementById("inputRut");
-  const inputAdress = document.getElementById("inputAdress");
+  const inputAddress = document.getElementById("inputAddress");
   const inputPhoneNumber = document.getElementById("inputPhoneNumber");
   const inputProductName = document.getElementById("inputProductName");
   const inputValue = document.getElementById("inputValue");
@@ -28,7 +28,7 @@ cotizar.addEventListener("click", async (e) => {
       body: JSON.stringify({
         name: inputName.value,
         rut: inputRut.value,
-        adress: inputAdress.value,
+        address: inputAddress.value,
         phone_number: inputPhoneNumber.value,
         product_name: inputProductName.value,
         price: inputValue.value,
