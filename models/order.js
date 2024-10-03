@@ -44,8 +44,7 @@ cotizar.addEventListener("click", async (e) => {
   }
 
   const json = await rawResponse.json();
-
-  console.log(json);
+  
   const orderDetailViewURL = `/view/orderDetailView.html?orderNumber=${json.id}`;
 
   window.location.replace(orderDetailViewURL);

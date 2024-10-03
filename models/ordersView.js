@@ -1,5 +1,7 @@
 async function getOrders() {
-  const url = "/data/orders.php";
+  const dateFilter = document.getElementById("dateFilter");
+  const url = `/data/orders.php?dateFilter=${dateFilter.value}`;
+
 
   try {
     const response = await fetch(url);
@@ -8,7 +10,6 @@ async function getOrders() {
     }
 
     const json = await response.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.error(error.message);
@@ -33,8 +34,12 @@ async function drawOrders() {
   }
 
   const resultBox = document.getElementById("results");
-  console.log(resultBox);
   resultBox.innerHTML = ordersHTML;
 }
 
 drawOrders();
+
+const dateFilter = document.getElementById("dateFilter");
+dateFilter.addEventListener("change", () => {
+  drawOrders();
+});

@@ -73,3 +73,5 @@ CREATE TABLE
         status VARCHAR(50),
         CONSTRAINT PK_id PRIMARY KEY (id)
     );
+
+    Select * FROM orders where (updated_date BETWEEN '2024-10-02 00:00:00' AND  '2024-10-02 23:59:59');

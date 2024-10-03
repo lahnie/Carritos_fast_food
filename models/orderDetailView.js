@@ -1,7 +1,6 @@
 async function getOrder() {
   let params = new URLSearchParams(document.location.search);
   let orderNumber = params.get("orderNumber");
-  console.log({ params, orderNumber });
 
   try {
     const rawResponse = await fetch(
@@ -12,7 +11,6 @@ async function getOrder() {
     }
 
     const json = await rawResponse.json();
-    console.log(json);
     return json;
   } catch (error) {
     console.error(error.message);
@@ -71,7 +69,6 @@ async function drawOrder() {
             </div>`;
 
   const resultBox = document.getElementById("result");
-  console.log(resultBox);
   resultBox.innerHTML = orderHTML;
 }
 
