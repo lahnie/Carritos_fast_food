@@ -7,7 +7,7 @@ INSERT INTO
         `id`,
         `client_name`,
         `rut`,
-        `adress`,
+        `address`,
         `phone_number`,
         `product_name`,
         `price`,
@@ -34,7 +34,7 @@ INSERT INTO
         `id`,
         `client_name`,
         `rut`,
-        `adress`,
+        `address`,
         `phone_number`,
         `product_name`,
         `price`,
@@ -75,3 +75,7 @@ CREATE TABLE
     );
 
     Select * FROM orders where (updated_date BETWEEN '2024-10-02 00:00:00' AND  '2024-10-02 23:59:59');
+
+    ALTER TABLE orders CHANGE adress address VARCHAR(255);
+
+    javascript: (() => {document.getElementById("inputName").value  = "derp"; document.getElementById("inputRut").value  = "12.234.567-k"; document.getElementById("inputAddress").value  = "derp street"; document.getElementById("inputPhoneNumber").value  = "1235679869"; document.getElementById("inputProductName").value  = "derpins"; document.getElementById("inputValue").value  = "9898989"; document.getElementById("inputProductDescription").value  = "derp";})();
